@@ -1,0 +1,8 @@
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: bold;
+  background-color: #90FF6A;
+  color: black;
+  /* För textfärg, justera efter behov */
+  margin: 0;
+}
