@@ -58,6 +58,6 @@
 }
 /* Ensure that the canvas covers full viewport width */
 .full-width-offcanvas {
-  width: 100vw;
+  width: 100vw !important;
 }
 </style>
