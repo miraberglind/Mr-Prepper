@@ -6,6 +6,12 @@
     <div style="height: 20vh;"></div>
     <PointingHands />
     <div style="height: 20vh;"></div>
+    <ColorChangeCircle />
+    <div style="height: 20vh;"></div>
+    <ScrollingText />
+    <div style="height: 40vh;"></div>
+
+
   </div>
 </template>
 
@@ -13,12 +19,19 @@
 import PanicMessage from '@/components/PanicMessage.vue';
 import Matchbox from '@/components/Matchbox.vue';
 import PointingHands from '@/components/PointingHands.vue';
+import ColorChangeCircle from '@/components/ColorChangeCircle.vue';
+import ScrollingText from '@/components/ScrollingText.vue';
+
+
 
 export default {
   components: {
     PanicMessage,
     Matchbox,
     PointingHands,
+    ColorChangeCircle,
+    ScrollingText,
+
   },
 };
 </script>
