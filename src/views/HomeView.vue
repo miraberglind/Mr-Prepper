@@ -9,7 +9,7 @@
     <ColorChangeCircle />
     <div style="height: 20vh;"></div>
     <ScrollingText />
-    <div style="height: 40vh;"></div>
+    <div class="after-text" style="height: 100vh;"></div> <!-- Ger utrymme för skrollning -->
 
 
   </div>
