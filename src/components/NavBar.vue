@@ -40,8 +40,8 @@
     <div class="offcanvas-body">
       <!-- Random links in the middle of the offcanvas body -->
       <div class="d-flex flex-column align-items-center justify-content-center h-100">
-        <a href="#" class="nav-link">Home</a>
-        <a href="#" class="nav-link">About</a>
+        <router-link class="home" to="/">Home</router-link>
+<router-link class="about" to="/AboutView">About</router-link>
         <a href="#" class="nav-link">Contact</a>
         <a href="#" class="nav-link">Read More</a>
       </div>

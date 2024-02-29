@@ -21,7 +21,6 @@
 }
 
 .footer-copyright {
-
   bottom: 0; /* Placera längst ner */
   width: 100%; /* Ta hela bredden */
   padding: 10px; /* Extra utrymme för utseende */
