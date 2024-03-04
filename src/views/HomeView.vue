@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import SpinningLogo from '@/components/SpinningLogo.vue';
 import PanicText from '@/components/PanicText.vue';
 import PanicMessage from '@/components/PanicMessage.vue';
 import Matchbox from '@/components/Matchbox.vue';
@@ -38,6 +39,8 @@ export default {
     PointingHands,
     ColorChangeCircle,
     ScrollingText,
+    PanicText,
+    SpinningLogo,
 
   },
 };
