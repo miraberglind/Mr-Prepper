@@ -1,5 +1,5 @@
 <template>
-  <div class="animated-text" ref="animatedText">Try not to panic.</div>
+  <div class="animated-text" ref="animatedText">TRY NOT TO PANIC!!!</div>
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 .animated-text {
-  font-size: 10rem;
+  font-size: 8rem;
   width: 100%;
   text-align: center;
 }

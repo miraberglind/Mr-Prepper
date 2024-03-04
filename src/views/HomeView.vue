@@ -1,6 +1,9 @@
 <template>
   <div class="home">
+    <SpinningLogo />
     <PanicMessage />
+    <PanicText />
+
     <div style="height: 70vh;"></div>
     <Matchbox />
     <div style="height: 20vh;"></div>
@@ -16,11 +19,13 @@
 </template>
 
 <script>
+import PanicText from '@/components/PanicText.vue';
 import PanicMessage from '@/components/PanicMessage.vue';
 import Matchbox from '@/components/Matchbox.vue';
 import PointingHands from '@/components/PointingHands.vue';
 import ColorChangeCircle from '@/components/ColorChangeCircle.vue';
 import ScrollingText from '@/components/ScrollingText.vue';
+import SpinningLogo from '@/components/SpinningLogo.vue';
 
 
 
@@ -31,8 +36,9 @@ export default {
     PointingHands,
     ColorChangeCircle,
     ScrollingText,
-
-  },
+    PanicText,
+    SpinningLogo
+},
 };
 </script>
 
