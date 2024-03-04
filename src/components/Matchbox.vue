@@ -20,7 +20,7 @@ export default {
         end: "top top", // Animation ends when the top of the matchbox reaches the top of the viewport
         scrub: true, // Makes the animation's progress tied to the scroll position
         toggleActions: "play reverse play reverse",
-        markers: true, // For debugging, remove or comment out for production
+        // markers: true, // For debugging, remove or comment out for production
       },
       x: () => { // Uses a function to determine the target position based on screen width
         // Moves to the right of the screen if the user scrolls down and in from the right if scrolling up
