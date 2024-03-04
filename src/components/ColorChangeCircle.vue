@@ -19,7 +19,7 @@ export default {
           start: "top bottom+=15%",
           end: "bottom top-=20%",
           scrub: true,
-          markers: true, // För felsökning, kan tas bort senare
+          // markers: true, För felsökning, kan tas bort senare
           onToggle: self => this.$refs.circle.style.backgroundColor = self.isActive ? '#C34E9C' : 'transparent',
         },
         scale: 30, // Justera denna skala så att cirkeln täcker hela skärmen
