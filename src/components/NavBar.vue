@@ -1,6 +1,20 @@
+<script>
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js' // Import bootstrap-JS into the document
+export default {
+  methods: {
+    hideOffCanvas() {
+      // Using Bootstrap's JavaScript API to hide the offcanvas menu
+      const offCanvasElement = this.$refs.offcanvasNavbar
+      const bsOffcanvas = bootstrap.Offcanvas.getInstance(offCanvasElement)
+      bsOffcanvas.hide()
+    }
+  }
+}
+</script>
+
 <template>
   <!-- The NavBar -->
-  <nav class="navbar border-bottom border-black" style="background-color: #90ff6a">
+  <nav class="navbar sticky-top border-bottom border-black" style="background-color: #90ff6a">
     <div class="container-fluid">
       <!-- The logo of the company -->
       <i class="bi bi-p-circle" style="font-size: 32px; color: black"></i>
@@ -24,11 +38,12 @@
     class="offcanvas offcanvas-start full-width-offcanvas"
     tabindex="-1"
     id="offcanvasNavbar"
+    ref="offcanvasNavbar"
     aria-labelledby="offcanvasNavbarLabel"
     style="background-color: #90ff6a"
   >
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+    <div class="offcanvas-header border-bottom border-black">
+      <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">Menu</h5>
       <!-- Close-toggle-btn  -->
       <button
         type="button"
@@ -39,11 +54,19 @@
     </div>
     <div class="offcanvas-body">
       <!-- Random links in the middle of the offcanvas body -->
-      <div class="d-flex flex-column align-items-center justify-content-center h-100">
-        <a href="#" class="nav-link">Home</a>
-        <a href="#" class="nav-link">About</a>
-        <a href="#" class="nav-link">Contact</a>
-        <a href="#" class="nav-link">Read More</a>
+      <div class="d-flex flex-column align-items-center justify-content-center gap-3 h-100 fs-2">
+        <router-link class="router-link-text-decoration" to="/" @click="hideOffCanvas"
+          >Home</router-link
+        >
+        <router-link class="router-link-text-decoration" to="/about" @click="hideOffCanvas"
+          >About</router-link
+        >
+        <router-link class="router-link-text-decoration" to="/" @click="hideOffCanvas"
+          >Contact</router-link
+        >
+        <router-link class="router-link-text-decoration" to="/about" @click="hideOffCanvas"
+          >Read More</router-link
+        >
       </div>
     </div>
   </div>
@@ -59,5 +82,14 @@
 /* Ensure that the canvas covers full viewport width */
 .full-width-offcanvas {
   width: 100vw !important;
+}
+
+/* The decoration for the router-link */
+.router-link-text-decoration {
+  text-decoration: none;
+  color: black;
+}
+.router-link-text-decoration:hover {
+  text-decoration: underline;
 }
 </style>
