@@ -1,10 +1,8 @@
 
 <template>
   <div class="text-container">
-    <div class="text from-left" ref="fromLeft">VÄNSTER TEXT VÄNSTER TEXT VÄNSTER TEXT VÄNSTER TEXT VÄNSTER TEXT VÄNSTER
-      TEXT VÄNSTER TEXT </div>
-    <div class="text from-right" ref="fromRight">HÖGER TEXT HÖGER TEXT HÖGER TEXT HÖGER TEXT HÖGER TEXT HÖGER TEXT HÖGER
-      TEXT </div>
+    <div class="text from-left" ref="fromLeft"> Prepp-a-Porter !! Prepp-a-Porter !! Prepp-a-Porter !! Prepp-a-Porter !! Prepp-a-Porter !! Prepp-a-Porter !! Prepp-a-Porter !!  </div>
+    <div class="text from-right" ref="fromRight">Prepp-a-Porter !! Prepp-a-Porter !! Prepp-a-Porter !! Prepp-a-Porter !! Prepp-a-Porter !! Prepp-a-Porter !! Prepp-a-Porter !!  </div>
   </div>
 </template>
 
@@ -24,10 +22,9 @@ export default {
       start: "top bottom",
       end: "bottom top",
       onEnter: () => document.body.style.backgroundColor = '#C34E9C',
-      //onLeave: () => document.body.style.backgroundColor = '#90FF6A',
       onEnterBack: () => document.body.style.backgroundColor = '#C34E9C',
       onLeaveBack: () => document.body.style.backgroundColor = '#90FF6A',
-      markers: true,
+      //markers: true,
     });
 
     // Animerar text från vänster
@@ -39,7 +36,7 @@ export default {
         start: "top bottom",
         end: "top center",
         scrub: true,
-        markers: true,
+        //markers: true,
       },
     });
 
@@ -66,13 +63,16 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 0px;
+  padding: 10px;
   overflow-x: hidden;
+  width: 100%; /* Säkerställer att containern tar upp hela bredden */
 }
 
 .text {
   font-size: 70px;
   font-weight: bold;
   color: white;
+  margin: auto; /* Centrerar texten och ger lika marginaler */
 }
 </style>
