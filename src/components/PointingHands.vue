@@ -22,7 +22,7 @@ export default {
         start: "top center",
         end: "top 35%",
         scrub: 2,
-        markers: true, // Markers, delete when we like the animation
+        //markers: true, 
       }
     });
 
