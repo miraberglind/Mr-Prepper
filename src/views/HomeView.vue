@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <SpinningLogo />
     <PanicMessage />
     <PanicText />
 
@@ -41,6 +42,10 @@ export default {
     PointingHands,
     ColorChangeCircle,
     ScrollingText,
+    SpinningLogo,
+    PanicText,
+    HorizontalText,
+    SpinningObjects,
 
   },
 };
