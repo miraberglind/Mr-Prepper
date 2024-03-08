@@ -1,5 +1,6 @@
 <script>
 import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js' // Import bootstrap-JS into the document
+import { gsap } from 'gsap'
 export default {
   methods: {
     hideOffCanvas() {
@@ -8,6 +9,18 @@ export default {
       const bsOffcanvas = bootstrap.Offcanvas.getInstance(offCanvasElement)
       bsOffcanvas.hide()
     }
+  },
+  // Code for the SpinningLogo
+  mounted() {
+    gsap.to('.logo', {
+      rotation: 360,
+      x: '10vw',
+      xPercent: -100,
+      duration: 1.5,
+      repeat: 0,
+      yoyo: false,
+      width: '50px'
+    })
   }
 }
 </script>
@@ -17,7 +30,8 @@ export default {
   <nav class="navbar sticky-top border-bottom border-black" style="background-color: #90ff6a">
     <div class="container-fluid">
       <!-- The logo of the company -->
-      <i class="bi bi-p-circle" style="font-size: 32px; color: black"></i>
+      <!-- <i class="bi bi-p-circle" style="font-size: 32px; color: black"></i> -->
+      <img src="@/assets/img/pp_logo_black.png" class="logo remove-margin-left" alt="Logo" />
       <!-- Title -->
       <a class="navbar-brand text-black fw-bold">Prepp-a-Porter</a>
       <!-- The Hamburger Menu/Open-toggle-btn -->
@@ -58,7 +72,7 @@ export default {
         <router-link class="router-link-text-decoration" to="/" @click="hideOffCanvas"
           >Home</router-link
         >
-        <router-link class="router-link-text-decoration" to="/about" @click="hideOffCanvas"
+        <router-link class="router-link-text-decoration" to="/AboutView" @click="hideOffCanvas"
           >About</router-link
         >
         <router-link class="router-link-text-decoration" to="/" @click="hideOffCanvas"
@@ -91,5 +105,9 @@ export default {
 }
 .router-link-text-decoration:hover {
   text-decoration: underline;
+}
+
+.remove-margin-left {
+  padding: 0px;
 }
 </style>
