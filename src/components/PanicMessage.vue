@@ -18,6 +18,7 @@ export default {
 
 <style scoped>
 .animated-text {
+  margin-top: 80px; /* To avoid that the content falls under the navbar */
   font-size: 8rem;
   width: 100%;
   text-align: center;

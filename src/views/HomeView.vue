@@ -1,38 +1,37 @@
 <template>
   <div class="home">
+    <SpinningLogo />
     <PanicMessage />
     <PanicText />
     <!-- <SpinningLogo /> -->
 
 
-    <div style="height: 70vh;"></div>
+    <div style="height: 70vh"></div>
     <Matchbox />
-    <div style="height: 10vh;"></div>
+    <div style="height: 10vh"></div>
     <PointingHands />
-    <div style="height: 20vh;"></div>
+    <div style="height: 20vh"></div>
     <ColorChangeCircle />
-    <div style="height: 5vh;"></div>
+    <div style="height: 5vh"></div>
     <ScrollingText />
-    <div style="height: 10vh;"></div>
+    <div style="height: 10vh"></div>
     <HorizontalText />
-    <div style="height: 30vh;"></div>
+    <div style="height: 30vh"></div>
     <SpinningObjects />
-    <div style="height: 40vh;"></div>
-
+    <div style="height: 40vh"></div>
   </div>
 </template>
 
 <script>
-import PanicText from '@/components/PanicText.vue';
-// import SpinningLogo from '@/components/SpinningLogo.vue';
-import PanicMessage from '@/components/PanicMessage.vue';
-import Matchbox from '@/components/Matchbox.vue';
-import PointingHands from '@/components/PointingHands.vue';
-import ColorChangeCircle from '@/components/ColorChangeCircle.vue';
-import ScrollingText from '@/components/ScrollingText.vue';
-import HorizontalText from '@/components/HorizontalText.vue';
-import SpinningObjects from '@/components/SpinningObjects.vue';
-
+// import SpinningLogo from '@/components/SpinningLogo.vue'
+import PanicText from '@/components/PanicText.vue'
+import PanicMessage from '@/components/PanicMessage.vue'
+import Matchbox from '@/components/Matchbox.vue'
+import PointingHands from '@/components/PointingHands.vue'
+import ColorChangeCircle from '@/components/ColorChangeCircle.vue'
+import ScrollingText from '@/components/ScrollingText.vue'
+import HorizontalText from '@/components/HorizontalText.vue'
+import SpinningObjects from '@/components/SpinningObjects.vue'
 
 export default {
   components: {
@@ -43,11 +42,9 @@ export default {
     ScrollingText,
     PanicText,
     HorizontalText,
-    SpinningObjects,
-    // SpinningLogo,
-
-  },
-};
+    SpinningObjects
+  }
+}
 </script>
 
 <style scoped>

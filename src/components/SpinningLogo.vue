@@ -15,7 +15,7 @@ export default {
       x: '10vw',
       xPercent: -100,
       duration: 2,
-      repeat: 1,
+      repeat: 0,
       yoyo: false,
       width: '100px',
     });
