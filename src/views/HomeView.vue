@@ -2,6 +2,8 @@
   <div class="home">
     <PanicMessage />
     <PanicText />
+    <!-- <SpinningLogo /> -->
+
 
     <div style="height: 70vh;"></div>
     <Matchbox />
@@ -22,6 +24,7 @@
 
 <script>
 import PanicText from '@/components/PanicText.vue';
+// import SpinningLogo from '@/components/SpinningLogo.vue';
 import PanicMessage from '@/components/PanicMessage.vue';
 import Matchbox from '@/components/Matchbox.vue';
 import PointingHands from '@/components/PointingHands.vue';
@@ -40,7 +43,8 @@ export default {
     ScrollingText,
     PanicText,
     HorizontalText,
-    SpinningObjects
+    SpinningObjects,
+    // SpinningLogo,
 
   },
 };
