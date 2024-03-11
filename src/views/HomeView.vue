@@ -3,6 +3,8 @@
     <SpinningLogo />
     <PanicMessage />
     <PanicText />
+    <!-- <SpinningLogo /> -->
+
 
     <div style="height: 70vh"></div>
     <Matchbox />

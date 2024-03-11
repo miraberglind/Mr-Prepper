@@ -21,8 +21,8 @@ export default {
         trigger: this.$el,
         start: "top center",
         end: "top 35%",
-        scrub: 2,
-        //markers: true, 
+        scrub: 1,
+        markers: true,
       }
     });
 
