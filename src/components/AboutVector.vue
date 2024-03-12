@@ -1,11 +1,9 @@
 <template>
-  <div class="vector-container">
-    <!-- Left hand image -->
-    <img src="@/assets/img/Sleepingbag.png" alt="Sleeping Bag" class="sleepingbag" ref="sleepingBag" />
-    <!-- Right hand image -->
-    <img src="@/assets/img/foodcan.png" alt="Food Can" class="foodcan" ref="foodCan" />
-    <!-- Animated text -->
-    <div class="animated-text" ref="animatedText">Your animated text here</div>
+  <div class="socks-container" ref="socksContainer">
+    <div class="socks" ref="socks">
+      <!-- Socks image -->
+      <img src="@/assets/img/socks.png" alt="socks" />
+    </div>
   </div>
 </template>
 
@@ -17,49 +15,37 @@ export default {
   mounted() {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Timeline for the animation with ScrollTrigger
-    const tl = gsap.timeline({
+    gsap.to(this.$refs.socks, {
       scrollTrigger: {
-        trigger: this.$el,
-        start: "top center",
-        end: "top 35%",
-        scrub: 2,
-        markers: true, // Markers, delete when we like the animation
-      }
+        trigger: this.$refs.socksContainer,
+        start: "top bottom", // Animation starts when the top of the socks container hits the bottom of the viewport
+        end: "bottom top", // Animation ends when the bottom of the socks container hits the top of the viewport
+        scrub: true, // Makes the animation's progress tied to the scroll position
+        toggleActions: "play reverse play reverse",
+        // markers: true, // For debugging, remove or comment out for production
+      },
+      x: () => {
+        const windowWidth = window.innerWidth;
+        return windowWidth < 768 ? '100%' : '50%'; // Starts off-screen to the right if screen width < 768px
+      },
+      scale: 0.5,
+      duration: 2, // How long the animation should take
+      ease: "none", // Uses linear easing for smooth movement with the scrolling
     });
-
-    tl.from(this.$refs.sleepingBag, { xPercent: -120, duration: 2 })
-      .from(this.$refs.foodCan, { xPercent: 120, duration: 2 }, "<")
-      .from(this.$refs.animatedText, { opacity: 0, duration: 1 }, "-=1"); // Adjust timing as needed
   },
 };
 </script>
 
 <style scoped>
-.vector-container {
-  position: relative;
-  height: 10vh;
-  /* Adjust the height if we need more space for scrolling */
+.socks-container {
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
-
-.sleepingBag {
-  left: 0;
-  top: 0%; /* Adjust position */
-  transform: translateY(-50%) translateX(-30%);
-}
-
-.foodCan {
-  right: 0;
-  top: 0%; /* Adjust position */
-  transform: translateY(-50%) translateX(30%);
-}
-
-.animated-text {
-  position: absolute;
-  top: 5%; /* Adjust position */
-  left: 5%; /* Adjust position */
-  transform: translate(-50%, -50%);
-  opacity: 0; /* Initially hidden */
+.socks {
+  position: absolute; /* Positioning relative to socks container */
+  left: 40%; /* Starts at the left edge of container */
+  top: 130%; /* Vertically centered, adjust as needed */
+  transform: translateY(-50%); /* Centers the element vertically */
+  width: 100%; /* Occupy full width */
 }
 </style>

@@ -12,22 +12,26 @@
 </template>
 
 <script>
+// Import av GSAP (GreenSock Animation Platform) för användning i Vue.js-komponenten
 import { gsap } from 'gsap'
 
 export default {
+  // Livscykelmetod som körs när komponenten är monterad
   mounted() {
+    // Animering av det första animerade textelementet
     gsap.from(this.$refs.animatedText, {
-      duration: 2,
-      x: '-100%', // Start from the left
-      ease: 'power3.out'
+      duration: 2, // Animeringsvaraktighet i sekunder
+      x: '-120%', // Startposition från vänster
+      ease: 'power3.out' // Easing-funktion för smidigare rörelse
     })
 
+    // Animering av det andra animerade textelementet
     gsap.from(this.$refs.animatedText2, {
-      duration: 2,
-      opacity: 0, // Start from transparent
-      y: 50, // Start from slightly below
-      ease: 'power3.out',
-      delay: 1 // Delay the animation by 1 second
+      duration: 2, // Animeringsvaraktighet i sekunder
+      opacity: 0, // Starttillstånd med noll genomskinlighet (osynlig)
+      y: 70, // Startposition något under sin ursprungliga position
+      ease: 'power3.out', // Easing-funktion för smidigare rörelse
+      delay: 1 // Fördröjning av animationen med 1 sekund efter den första animationen
     })
   }
 }
