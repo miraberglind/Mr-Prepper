@@ -8,56 +8,73 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap"; // Import GSAP for animations
+import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import ScrollTrigger plugin for scroll-related animations
 
 export default {
   mounted() {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger plugin to use with GSAP
+    const windowWidth = window.innerWidth; // Get the current window width
 
-    // Timeline for the animation with ScrollTrigger
+    // Determine how much the hands should move based on screen size
+    const handOffset = windowWidth < 768 ? 60 : 120;
+
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: this.$el,
-        start: "top center",
-        end: "top 35%",
-        scrub: 1,
-        markers: true,
+        trigger: this.$el, // Element that triggers the animation
+        start: "top center", // Start the animation when the top of this element is at the center of the viewport
+        end: "top 35%", // End the animation when the top of this element is at 35% of the viewport height
+        scrub: 1, // Sync animation progress with scroll position for a smooth effect
+        markers: true, // Show markers for debugging
       }
     });
 
-    tl.from(this.$refs.leftHand, { xPercent: -120, duration: 2 })
-      .from(this.$refs.rightHand, { xPercent: 120, duration: 2 }, "<");
+    // Animate the left and right hands moving in from off-screen
+    tl.from(this.$refs.leftHand, { xPercent: -handOffset, duration: 2 })
+      .from(this.$refs.rightHand, { xPercent: handOffset, duration: 2 }, "<"); // "<" means start at the same time as the previous animation
   },
 };
 </script>
+
 
 <style scoped>
 .hands-container {
   position: relative;
   width: 100%;
-  height: 100vh;
-  /* Adjust the height if we need more space for scrolling */
+  height: 100vh; /* Make the container full viewport height to allow for scrolling */
 }
 
 .left-hand,
 .right-hand {
   position: absolute;
-  width: auto;
-  /* Adjust the width as necessary to fit our image size */
-  max-width: 100%;
-  /* Prevents the images from becoming too large */
+  width: auto; /* Adjust width as needed to fit the image size */
+  max-width: 100%; /* Prevent images from becoming too large */
 }
 
 .left-hand {
   left: 0;
-  top: 60%;
-  transform: translateY(-60%) translateX(-30%);
+  top: 60%; /* Positioning for the left hand */
+  transform: translateY(-60%) translateX(-30%); /* Move it off-screen initially */
 }
 
 .right-hand {
   right: 0;
-  top: 40%;
-  transform: translateY(-40%) translateX(10%);
+  top: 40%; /* Positioning for the right hand */
+  transform: translateY(-40%) translateX(10%); /* Move it off-screen initially */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .left-hand, .right-hand {
+    width: 50%; /* Make images smaller on small screens */
+  }
+  .left-hand {
+    top: 50%; /* Adjust position for less displacement */
+    transform: translateY(-50%) translateX(-20%);
+  }
+  .right-hand {
+    top: 50%; /* Adjust position for less displacement */
+    transform: translateY(-50%) translateX(20%);
+  }
 }
 </style>
