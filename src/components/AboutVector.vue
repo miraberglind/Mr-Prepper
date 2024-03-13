@@ -1,65 +1,72 @@
 <template>
   <div class="vector-container">
     <!-- Left hand image -->
-    <img src="@/assets/img/Sleepingbag.png" alt="Sleeping Bag" class="sleepingbag" ref="sleepingBag" />
+    <img src="@/assets/img/Sleepingbag.png" alt="Sleeping Bag" class="sleepingbag" />
     <!-- Right hand image -->
-    <img src="@/assets/img/foodcan.png" alt="Food Can" class="foodcan" ref="foodCan" />
-    <!-- Animated text -->
-    <div class="animated-text" ref="animatedText">Your animated text here</div>
+    <img src="@/assets/img/foodcan.png" alt="Food Can" class="foodcan" />
   </div>
 </template>
 
 <script>
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 export default {
   mounted() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Timeline for the animation with ScrollTrigger
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: this.$el,
-        start: "top center",
-        end: "top 35%",
-        scrub: 2,
-        markers: true, // Markers, delete when we like the animation
-      }
-    });
-
-    tl.from(this.$refs.sleepingBag, { xPercent: -120, duration: 2 })
-      .from(this.$refs.foodCan, { xPercent: 120, duration: 2 }, "<")
-      .from(this.$refs.animatedText, { opacity: 0, duration: 1 }, "-=1"); // Adjust timing as needed
-  },
+    // Inga GSAP-animeringar behövs här
+  }
 };
 </script>
 
 <style scoped>
 .vector-container {
   position: relative;
-  height: 10vh;
-  /* Adjust the height if we need more space for scrolling */
+  min-height: 100vh;
+  overflow-x: hidden; /* Förhindrar horisontell scroll */
 }
 
-
-.sleepingBag {
-  left: 0;
-  top: 0%; /* Adjust position */
-  transform: translateY(-50%) translateX(-30%);
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Förhindrar sidscroll på hela sidan */
 }
 
-.foodCan {
-  right: 0;
-  top: 0%; /* Adjust position */
-  transform: translateY(-50%) translateX(30%);
-}
-
-.animated-text {
+.sleepingbag, .foodcan, .animated-text {
   position: absolute;
-  top: 5%; /* Adjust position */
-  left: 5%; /* Adjust position */
-  transform: translate(-50%, -50%);
-  opacity: 0; /* Initially hidden */
+  left: 50%; /* Centrerar elementen för att undvika att de går utanför skärmen */
+  transform: translateX(-50%);
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); /* Samma som 'power3.out' i GSAP */
+  animation-fill-mode: forwards; /* Säkerställer att elementen stannar på sin slutposition efter animationen */
+}
+
+.sleepingbag {
+  animation-name: slideFromLeft;
+}
+
+.foodcan {
+  animation-name: slideFromRight;
+  animation-delay: 0.5s;
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .sleepingbag, .foodcan {
+    width: 80vw; /* Anpassar storleken på bilderna baserat på skärmens bredd */
+  }
 }
 </style>

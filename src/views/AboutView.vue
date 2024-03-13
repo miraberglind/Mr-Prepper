@@ -1,8 +1,10 @@
 <template>
   <div class="about">
+  <div style="height: 10vh;"></div>
+
   <AboutAnimation />
   <AboutVector />
-  <div style="height: 50vh;"></div>
+  <div style="height: 10vh;"></div>
   </div>
 </template>
 
@@ -21,7 +23,7 @@ export default {
 </script>
 
 <style scoped>
-.home {
+.about {
   overflow-x: hidden;
   /* Förhindrar horisontellt scrollande */
 }

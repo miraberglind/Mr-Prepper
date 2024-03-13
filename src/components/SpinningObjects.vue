@@ -1,27 +1,27 @@
 <template>
   <div class="peace-marks-container">
     <div class="text-content">
-      <p><span class="headline">[VATTEN]</span><br>
-      Rent dricksvatten är livsnödvändigt.<br>
-      Räkna med minst tre liter per vuxen och dygn. Om du är osäker på kvalitén behöver du kunna koka vattnet.</p>
+      <p><span class="headline">[WATER]</span><br>
+      Clean drinking water is essential for life.<br>
+      Plan on at least three liters per adult per day. If you're unsure about the quality, you need to be able to boil the water.</p>
 
-      <p><span class="headline">[MAT]</span><br>
-      Det är viktigt att ha mat hemma som ger tillräckligt med energi.<br>
-      Använd hållbar mat som kan tillagas snabbt, kräver liten mängd vatten eller som kan ätas utan tillagning.</p>
+      <p><span class="headline">[FOOD]</span><br>
+      It's important to have food at home that provides enough energy.<br>
+      Use sustainable food that can be prepared quickly, requires a small amount of water, or can be eaten without cooking.</p>
 
-      <p><span class="headline">[VÄRME]</span><br>
-      Om elen försvinner under en kall årstid blir bostaden snabbt utkyld.<br>
-      Samlas i ett rum, häng filtar för fönstren, täck golvet med mattor och bygg en koja under ett bord för att hålla värmen.<br>
-      Tänk på brandfaran om du har levande ljus.</p>
+      <p><span class="headline">[HEAT]</span><br>
+      If electricity goes out during a cold season, your home will cool down quickly.<br>
+      Gather in one room, hang blankets over the windows, cover the floor with rugs, and build a fort under a table to keep warm.<br>
+      Be mindful of the fire hazard if you're using candles.</p>
 
-      <p><span class="headline">[KOMMUNIKATION]</span><br>
-      Vid en allvarlig händelse behöver du kunna ta emot viktig information från ansvariga myndigheter, främst via Sveriges Radio P4 och Sveriges Television.<br>
-      Du kan också gå in på krisinformation.se eller ringa informationsnumret 113 13.<br>
-      Vid akuta behov måste du kunna larma 112.<br>
-      Tänk också på att du behöver kunna ha kontakt med dina anhöriga.</p>
+      <p><span class="headline">[COMMUNICATION]</span><br>
+      In a serious event, you need to be able to receive important information from the responsible authorities, mainly through Sveriges Radio P4 and Sveriges Television.<br>
+      You can also visit krisinformation.se or call the information number 113 13.<br>
+      In urgent needs, you must be able to alarm 112.<br>
+      Also remember that you need to be able to stay in touch with your relatives.</p>
     </div>
-
-    <!-- Peace-märken -->
+    
+    <!-- Peace-marks -->
     <img src="@/assets/img/peace_sign_green.png" alt="Peace Sign Green" class="peace-mark peace-mark-first" />
     <img src="@/assets/img/peace_sign_green.png" alt="Peace Sign Green" class="peace-mark peace-mark-second" />
     <img src="@/assets/img/pp_logo_green.png" alt="PP Logo Green" class="peace-mark pp-logo-first" />
@@ -36,26 +36,26 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 600px; /* Ökad höjd för att ge mer utrymme för text */
+  height: 600px; /* Adjust height for more space for text */
   width: 100%;
-  padding: 50px; /* Lägger till padding för att undvika att märkena överlappar texten */
+  padding: 50px; /* Adds padding to prevent the marks from overlapping the text */
 }
 
 .headline {
-  color: #90FF6A; /* Grön färg */
-  font-size: 70px; /* Storlek på text */
-  font-weight: bold; /* Gör texten fet */
-  text-transform: uppercase; /* Stora bokstäver */
+  color: #90FF6A; /* Green color */
+  font-size: 70px; /* Text size */
+  font-weight: bold; /* Makes the text bold */
+  text-transform: uppercase; /* Uppercase letters */
 }
 
 .text-content {
   color: white;
   position: absolute;
-  z-index: 2; /* Gör texten synlig ovanpå peace-märkena */
+  z-index: 2; /* Makes the text visible above the peace marks */
   text-align: center;
-  font-size: 20px; /* Anpassa storleken efter behov */
-  max-width: 60%; /* Begränsar textbredden för läsbarhet */
-  line-height: 1.5; /* Förbättrar textens läsbarhet */
+  font-size: 20px; /* Adjust size as needed */
+  max-width: 60%; /* Limits text width for readability */
+  line-height: 1.5; /* Improves text readability */
 }
 
 .peace-mark {
@@ -63,7 +63,7 @@
   animation: spin infinite linear;
 }
 
-/* Justerade positioner för att omringa texten mer balanserat */
+/* Adjusted positions to more balancedly surround the text */
 .peace-mark-first { width: 150px; animation-duration: 5s; top: 2%; left:5%; }
 .peace-mark-second { width: 100px; animation-duration: 7s; top: 50%; right: 15%; }
 .pp-logo-first { width: 90px; animation-duration: 8s; bottom: 10%; left: 20%; }
@@ -73,6 +73,29 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@media (max-width: 768px) {
+  .headline {
+    font-size: 30px; /* Further reduce the headline size for very small screens */
+  }
+
+  .text-content {
+    font-size: 14px; /* Reduce font size for better fit on small screens */
+    max-width: 90%; /* Increase max-width for better text wrapping */
+    padding: 0 20px; /* Add padding to prevent text from touching the edges */
+    margin: 0 auto; /* Center the text content if necessary */
+    line-height: 1.4; /* Adjust line height for better readability */
+  }
+
+  .peace-mark-first, .peace-mark-second, .pp-logo-first, .pp-logo-second {
+    width: 50px; /* Make icons significantly smaller to not interfere with the text */
+    opacity: 0.9; /* Optional: Reduce opacity to make them less distracting */
+  }
+
+  /* Adjusting positions further away from the text or even off-screen if they are too distracting */
+  .peace-mark-first { top: -10%; left: 1%; }
+  .peace-mark-second { top: 50%; right: -3%; }
+  .pp-logo-first { bottom: 20%; left: -1%; }
+  .pp-logo-second { top: -3%; right: 3%; }
+}
 </style>
-
-
