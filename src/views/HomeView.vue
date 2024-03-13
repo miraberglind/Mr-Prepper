@@ -3,11 +3,10 @@
     <SpinningLogo />
     <PanicMessage />
     <PanicText />
-    <!-- <SpinningLogo /> -->
 
 
-    <div style="height: 70vh"></div>
-    <Matchbox />
+    <div style="height: 30vh"></div>
+    <ArticleEarthquake />
     <div style="height: 10vh"></div>
     <PointingHands />
     <div style="height: 20vh"></div>
@@ -26,7 +25,7 @@
 // import SpinningLogo from '@/components/SpinningLogo.vue'
 import PanicText from '@/components/PanicText.vue'
 import PanicMessage from '@/components/PanicMessage.vue'
-import Matchbox from '@/components/Matchbox.vue'
+import ArticleEarthquake from '@/components/ArticleEarthquake.vue'
 import PointingHands from '@/components/PointingHands.vue'
 import ColorChangeStar from '@/components/ColorChangeStar.vue'
 import ScrollingText from '@/components/ScrollingText.vue'
@@ -36,7 +35,7 @@ import SpinningObjects from '@/components/SpinningObjects.vue'
 export default {
   components: {
     PanicMessage,
-    Matchbox,
+    ArticleEarthquake,
     PointingHands,
     ColorChangeStar,
     ScrollingText,
