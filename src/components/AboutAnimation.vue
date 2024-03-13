@@ -38,17 +38,36 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 20px; /* Adjust padding for side space */
+  padding: 0 20px; /* Justerar sidomarginal */
 }
+
 .animated-text {
-  font-size: 6rem;
+  font-size: 6rem; /* Anpassa för stora skärmar */
   text-align: center;
-  margin-bottom: 20px; /* Adjust margin as needed */
-  margin-top: 40px; /* Adjust margin as needed */
+  margin-bottom: 20px; /* Justera marginal vid behov */
+  margin-top: 40px; /* Justera marginal vid behov */
 }
+
 .animated-text2 {
-  font-size: 22px;
-  max-width: 800px; /* Adjust width as needed */
+  font-size: 22px; /* Anpassa för stora skärmar */
+  max-width: 800px; /* Justera bredden vid behov */
   text-align: justify;
 }
+
+/* Media queries för mindre skärmar */
+@media (max-width: 768px) {
+  .animated-text {
+    font-size: 3rem; /* Minskad storlek för läsbarhet */
+  }
+  .animated-text2 {
+    font-size: 18px; /* Minskad storlek för läsbarhet */
+    max-width: 100%; /* Anpassa bredden till skärmens bredd */
+  }
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
+
 </style>

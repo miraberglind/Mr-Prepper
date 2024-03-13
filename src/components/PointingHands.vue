@@ -25,7 +25,7 @@ export default {
         start: "top center", // Start the animation when the top of this element is at the center of the viewport
         end: "top 35%", // End the animation when the top of this element is at 35% of the viewport height
         scrub: 1, // Sync animation progress with scroll position for a smooth effect
-        markers: true, // Show markers for debugging
+        //markers: true,  Show markers for debugging
       }
     });
 
