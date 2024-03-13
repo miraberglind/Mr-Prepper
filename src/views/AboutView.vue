@@ -4,7 +4,7 @@
 
   <AboutAnimation />
   <AboutVector />
-  <div style="height: 10vh;"></div>
+  <div style="height: 1vh;"></div>
   </div>
 </template>
 
