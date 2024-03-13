@@ -3,8 +3,6 @@
     <div class="animated-text" ref="animatedText">Welcome to Prepp-a-Porter!</div>
     <div class="animated-text2" ref="animatedText2">
 
-
-
       <p>We are passionate about sharing knowledge and resources to help people prepare for any eventualities and disasters that life may throw their way. For us, prepping is not just about preparing for the worst; it's also about cultivating a sense of independence, security, and resilience regardless of circumstances. By learning survival techniques, acquiring necessary skills, and gathering resources, we aim to strengthen the community and promote a sense of responsibility towards ourselves and our loved ones.</p>
 
       <p>Whether you're a beginner or an experienced prepper, our page is a place where you can learn, share, and grow alongside other like-minded individuals. We believe in building strong and sustainable communities that can weather challenges and crises together. Join us on our journey towards self-reliance, preparedness, and community. Together, we can equip ourselves for the future, whatever it may hold.</p>
@@ -79,6 +77,5 @@ export default {
 body, html {
   overflow-x: hidden;
 }
-
 
 </style>
