@@ -19,6 +19,8 @@
     <div style="height: 10vh"></div>
     <SpinningObjects />
     <div style="height: 40vh"></div>
+    <NotePad />
+    <div style="height: 40vh"></div>
   </div>
 </template>
 
@@ -30,8 +32,10 @@ import Matchbox from '@/components/Matchbox.vue'
 import PointingHands from '@/components/PointingHands.vue'
 import ColorChangeStar from '@/components/ColorChangeStar.vue'
 import ScrollingText from '@/components/ScrollingText.vue'
+import NotePad from '@/components/NotePad.vue'
 import HorizontalText from '@/components/HorizontalText.vue'
 import SpinningObjects from '@/components/SpinningObjects.vue'
+
 
 export default {
   components: {
@@ -42,7 +46,8 @@ export default {
     ScrollingText,
     PanicText,
     HorizontalText,
-    SpinningObjects
+    SpinningObjects,
+    NotePad
   }
 }
 </script>
