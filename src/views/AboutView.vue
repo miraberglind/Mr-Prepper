@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style scoped>
-.home {
+.about {
   overflow-x: hidden;
   /* Förhindrar horisontellt scrollande */
 }
