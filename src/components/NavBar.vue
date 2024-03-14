@@ -34,7 +34,7 @@ export default {
         <img src="@/assets/img/pp_logo_black.png" class="logo" alt="Logo of the website" />
       </router-link>
       <!-- Title -->
-      <a class="navbar-brand text-black fw-bold">Prepp-a-Porter</a>
+      <h1 class="navbar-brand text-black fw-bold">Prepp-a-Porter</h1>
       <!-- The Hamburger Menu/Open-toggle-btn -->
       <button
         class="navbar-toggler custom-toggler"
