@@ -4,25 +4,23 @@
     <PanicMessage />
     <PanicText />
 
-
-    <div style="height: 30vh"></div>
+    <div class="spacer medium"></div>
     <ArticleEarthquake />
-    <div style="height: 10vh"></div>
+    <div class="spacer large"></div>
     <PointingHands />
-    <div style="height: 20vh"></div>
+    <div class="spacer small"></div>
     <ColorChangeStar />
-    <div style="height: 5vh"></div>
+    <div class="spacer tiny"></div>
     <ScrollingText />
-    <div style="height: 5vh"></div>
+    <div class="spacer tiny"></div>
     <HorizontalText />
-    <div style="height: 10vh"></div>
+    <div class="spacer small"></div>
     <SpinningObjects />
-    <div style="height: 40vh"></div>
+    <div class="spacer extra-large"></div>
   </div>
 </template>
 
 <script>
-// import SpinningLogo from '@/components/SpinningLogo.vue'
 import PanicText from '@/components/PanicText.vue'
 import PanicMessage from '@/components/PanicMessage.vue'
 import ArticleEarthquake from '@/components/ArticleEarthquake.vue'
@@ -48,9 +46,26 @@ export default {
 
 <style scoped>
 .home {
-  overflow-x: hidden;
-  /* Förhindrar horisontellt scrollande */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
-/* Övriga stilar för din HomeView-komponent */
+/* Base spacer sizes */
+.spacer {
+  width: 100%;
+}
+.spacer.tiny { height: 5vh; }
+.spacer.small { height: 20vh; }
+.spacer.medium { height: 30vh; }
+.spacer.large { height: 130vh; }
+.spacer.extra-large { height: 40vh; }
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .spacer.tiny { height: 5vh; }
+  .spacer.small { height: 20vh; }
+  .spacer.medium { height: 30vh; }
+  .spacer.large { height: 130vh; }
+  .spacer.extra-large { height: 40vh; }
+  /* Add additional responsive styles as needed */
+}
 </style>
