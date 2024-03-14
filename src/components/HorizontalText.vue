@@ -1,8 +1,8 @@
 <template>
   <div class="scrolling-text-container">
     <div class="scrolling-text">
-      <span> TOILET PAPER CANNED FOOD GAS STOVE </span>
-      <span> TOILET PAPER CANNED FOOD GAS STOVE </span>
+      <span> THE IMPORTANT 4 </span>
+      <span> THE IMPORTANT 4 </span>
     </div>
   </div>
 </template>

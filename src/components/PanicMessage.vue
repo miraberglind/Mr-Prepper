@@ -23,4 +23,12 @@ export default {
   width: 100%;
   text-align: center;
 }
+
+/* Media query for screens that are 768px wide or smaller */
+@media (max-width: 768px) {
+  .animated-text {
+    font-size: 3rem; /* Adjusted font size for smaller screens */
+    margin-top: 60px; /* Optional: Adjust the top margin for smaller screens */
+  }
+}
 </style>
